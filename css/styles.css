@@ -1,0 +1,128 @@
+#title {
+  background-color: #ff4c68;
+  color: #fff;
+}
+body {
+  font-family: "Montserrat";
+}
+h1 {
+ font-family: "Montserrat";
+ font-size: 3.5rem;
+ line-height: 1.5;
+ font-weight: 900;
+}
+h2 {
+  font-family: "Montserrat";
+  font-weight: bold;
+  line-height: 1.5;
+  font-size: 3rem;
+}
+.container-fluid {
+  padding: 3% 15% 7%;
+}
+.navbar-brand {
+  font-family: "Ubuntu";
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.navbar {
+  padding: 0 0 4.5rem; /* Added 0 0 because bootstrap added some default padding which we didnt wanted */
+}
+.nav-item {
+  padding: 0 18px;
+}
+.nav-link {
+  font-size: 1.2rem;
+  font-family: "Montserrat-Light";
+}
+.download-button {
+  margin: 3% 3% 5% 0;
+}
+.title-image {
+  width: 60%;
+  transform: rotate(25deg);  /* rotate() is a CSS function */
+  position: absolute; /* We kept its position absolute so as to take it out of flow so the area on web page of the first section which was getting extended by the image doesnt stay extended any longer thus making the total width of section 1 shorter and thus making the features section rising up to fill in the space that was extended by the image before to keep everything in html flow and treating the image as if it werent there while keeping the image still in that place with z index 0 and z index of feature section 1 thus feature section partly covers the title image and comes on top of it */
+  right: 30%; /* Since position is absolute we can use this */
+}
+#features {
+  padding: 7% 15%;
+  background-color: #fff; /* We did this because by default the background color was a trasparent see through which we didnt wanted while making the phone image go behind it so we changed it to pure white */
+  position: relative; /* We used this and not position absolute because that would take the element out of the html flow and make unwanted consequences like changes in position and other distortions. But position relative keeps it in html flow and still allows us to use z index so best in our case to use z index. We also couldnt use z index on title image because making it -1 would make it go behind the entire title section thus making it invisible. */
+  /* z-index: 1; We dont need to use this because features section comes later in te flow so it will be on top by default */
+}
+.feature-box {
+  text-align: center; /* If we didnt do this all the text will start from left of line. Butnow look they begin from center and start spreading in left and right directions for each line. noticeable in the not bold two line senetences in the second line */
+  padding:5%; /* To make the boxer smaller so instead of one long line of description we get two short lines which is easily readable */
+}
+h3 {
+  font-family: "Montserrat" sans-serif;
+  font-weight: bold;
+}
+p {
+  color: #8F8F8F;
+}
+.icon {
+  color: #EF8172;
+  margin-bottom: 1rem;
+}
+.icon:hover {
+  color: #ff4c68;
+}
+#testimonials {
+  /*padding: 7% 15%; We gave padding all around the section tag because it will work on all contents inside it. Much better than making the webpage unnecessarily large by appling margin all around the outside. Also much better than giving margins separately to each element inside it. But later we removed padding from here and pasted the same padding in carousel-item below so that the arrows look more spaced out and still the content remains in center. One more advantage of having separate divs for each. Thus the arrows were outside of items div so they werent padded */
+  text-align: center;
+  background-color: #EF8172;
+  color: #fff;
+}
+.carousel-item {
+  padding: 7% 15%;
+}
+.testimonial-image {
+  width: 10%;
+  border-radius: 100%; /* Makes the image rounded */
+  margin: 20px;
+}
+#press {
+  background-color: #EF8172;
+  text-align: center;
+  padding-bottom: 3%;
+}
+.press-logo {
+  width: 15%;
+  margin: 20px 20px 50px; /* Used margin because padding wouldnt have helped us here as it makes inside content squeezed in smaller space. To expand and space out elements we use margin. */
+}
+#pricing {
+  padding: 100px;
+  text-align: center;
+}
+.pricing-column {
+  padding: 3% 2%;
+}
+@media (max-width: 1028px) {
+  #title {
+    text-align: center;
+  }
+  .title-image {
+    position: static; /* This will make the image back in flow of html when screen size is 1028px or less and make it look better when viewed on tablet or mobile by making it take 100% width and full image */
+    transform: rotate(0); /* This is absolute rotation so you dont have to mention a rotation in negative to make it vertical */
+  }
+}
+#cta {
+  background-color: #ff4c68;
+  color: #fff;
+  text-align: center;
+  padding: 7% 15%;
+}
+.cta-heading {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+#footer {
+  padding: 7% 15%;
+  text-align: center;
+}
+.social-icon {
+  margin: 20px 10px;
+}
